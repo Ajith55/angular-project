@@ -15,6 +15,8 @@ export class AppComponent {
   { id: 55, name: "sam", email: "sam@gmail.com" },
   { id: 66, name: "dam", email: "dam@gmail.com" }]
 
+  showName : boolean = false;
+
   constructor(){
     console.log('constructor executed');
     // this.someArray[3];
