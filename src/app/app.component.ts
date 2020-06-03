@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -10,22 +11,33 @@ export class AppComponent {
   someArray = [1,2,37,4, 50, 100];
   someName = ["ajith", "bhargav", "bobby"];
   myStudent = {id:44, name:"ajith", email:"ajith@gmail.com"};
+  model:any;
   
-  studentList = [{ id: 44, name: "ajith", email: "ajith@gmail.com" },
+  studentList = [{ id: 77, name: "ajith", email: "ajith@gmail.com" },
   { id: 55, name: "sam", email: "sam@gmail.com" },
   { id: 66, name: "dam", email: "dam@gmail.com" }]
 
+  myStudentResponse : any;
+
+  
+
   showName : boolean = false;
 
-  constructor(){
+  constructor(private studentService : AppService){               //dependency injection
     console.log('constructor executed');
     // this.someArray[3];
+    
   }
 
   afterChange(){
-    //console.log('button Working');
-    this.myName = "ajith Aribandi";
-    console.log(this.myStudent.id);
+    this.studentService.getAllStudents().subscribe((response)=>{
+      console.log(response);
+      // console.log(response.status);
+      // console.log(response.data);
+            this.myStudentResponse = response;
+    }, (err) =>{
+      console.log(err);
+    });
   }
 
   // numberButton(){
@@ -47,9 +59,12 @@ export class AppComponent {
 
   numberButton(){
     for(let i=0; i<this.studentList.length; i++){
-          console.log(this.studentList[i].id);
+          console.log(this.studentList[i]);
     }
+    
+    
   }
+  
   
 
 }

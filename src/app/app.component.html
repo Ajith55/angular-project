@@ -5,3 +5,22 @@
 <button id="someButton" name="someButton" (click)="numberButton()">Number Button</button>
 
 <app-student></app-student>
+
+<div class="container">
+  <table class="table" >
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Email</th>
+    </tr>
+    <tr *ngFor="let employee of myStudentResponse.data">
+      <td>{{employee.employee_name}}</td>
+      <td>{{employee.employee_salary}}</td>
+      <td>{{employee.id}}</td>
+      <td>{{employee.employee_age}}</td>
+    </tr>
+  </table>
+</div>
+
+
