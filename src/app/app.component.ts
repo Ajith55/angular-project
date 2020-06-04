@@ -31,7 +31,7 @@ export class AppComponent {
 
   afterChange(){
     this.studentService.getAllStudents().subscribe((response)=>{
-      console.log(response);
+      // console.log(response);
       // console.log(response.status);
       // console.log(response.data);
             this.myStudentResponse = response;
