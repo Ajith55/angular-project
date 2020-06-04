@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppService } from './app.service';
+import { SharedService } from './Employee/service/shared.service';
 
 @Component({
   selector: 'app-root',
@@ -18,16 +19,24 @@ export class AppComponent {
   { id: 66, name: "dam", email: "dam@gmail.com" }]
 
   myStudentResponse : any;
+  employeeResults : any;
 
   
 
   showName : boolean = false;
 
-  constructor(private studentService : AppService){               //dependency injection
-    console.log('constructor executed');
+  constructor(private studentService : AppService, private sharedService : SharedService){               //dependency injection
+    // console.log('constructor executed');
     // this.someArray[3];
     
   }
+  ngOnInit(){
+    this.sharedService.cast.subscribe((response)=>{
+          this.employeeResults = response;
+          console.log(this.employeeResults);
+    })
+  }
+  
 
   afterChange(){
     this.studentService.getAllStudents().subscribe((response)=>{
