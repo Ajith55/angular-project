@@ -8,17 +8,19 @@ import { SharedService } from './Employee/service/shared.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  myName : string = "ajith";
-  someArray = [1,2,37,4, 50, 100];
-  someName = ["ajith", "bhargav", "bobby"];
-  myStudent = {id:44, name:"ajith", email:"ajith@gmail.com"};
+
+  // GLOBAL VARIABLES Starts
+  myName : string = "ajith";  // myName is a variable of type string
+  someArray = [1,2,37,4, 50, 100]; //someArray is array of numbers
+  someName = ["ajith", "bhargav", "bobby"]; //someName is array of strings
+  myStudent = {id:44, name:"ajith", email:"ajith@gmail.com"}; //myStudent has a object
   model:any;
   
-  studentList = [{ id: 77, name: "ajith", email: "ajith@gmail.com" },
+  studentList = [{ id: 77, name: "ajith", email: "ajith@gmail.com" }, // studentList has array of objects
   { id: 55, name: "sam", email: "sam@gmail.com" },
   { id: 66, name: "dam", email: "dam@gmail.com" }]
 
-  myStudentResponse : any;
+  myStudentResponse : any; //of type any
   employeeResults : any;
 
   
@@ -26,13 +28,13 @@ export class AppComponent {
   showName : boolean = false;
 
   constructor(private studentService : AppService, private sharedService : SharedService){               //dependency injection
-    // console.log('constructor executed');
+    // console.log('constructor executed');                                                       //will get access from AppService and SharedService
     // this.someArray[3];
     
   }
   ngOnInit(){
-    this.sharedService.cast.subscribe((response)=>{
-          this.employeeResults = response;
+    this.sharedService.cast.subscribe((response)=>{          // Subscribing to sharedService to get response
+          this.employeeResults = response;                  //  Assigining response to global vairable
           console.log(this.employeeResults);
     })
   }
