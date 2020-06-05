@@ -9,7 +9,7 @@ import { EmployeeService } from '../../service/employee.service';
 export class EmployeeFormComponent implements OnInit {
 
 
-  constructor(private employeeService : EmployeeService ){
+  constructor(private employeeService : EmployeeService ){            // Getting access to EmployeeService and storing in employeeService
 
   }
   
@@ -21,7 +21,7 @@ export class EmployeeFormComponent implements OnInit {
 
   onBurttonClick(){
     // console.log("button working");
-    this.employeeService.getAllEmployee();
+    this.employeeService.getAllEmployee();        // calling the function getAllEmployee from EmployeeService
 
   }
 

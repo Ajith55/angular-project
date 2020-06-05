@@ -5,7 +5,7 @@ import {BehaviorSubject} from 'rxjs';
 })
 export class SharedService {
 
-  private Employeeinfo = new BehaviorSubject<any>('');
+  private Employeeinfo = new BehaviorSubject<any>(''); // Assigining behaviouralsubject of type any to Employeeinfo
   cast = this.Employeeinfo.asObservable();
 
   constructor() { }
