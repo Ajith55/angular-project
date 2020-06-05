@@ -6,6 +6,10 @@
 
 <app-student></app-student>
 
+<input type="text" id="sid" name="sid" [(ngModel)]="myName" />
+{{myName}}
+
+
 <div class="container">
   <table class="table" >
     <tr>
@@ -14,7 +18,7 @@
       <th>Email</th>
       <th>Email</th>
     </tr>
-    <tr *ngFor="let employee of myStudentResponse.data">
+    <tr *ngFor="let employee of myStudentResponse">
       <td>{{employee.employee_name}}</td>
       <td>{{employee.employee_salary}}</td>
       <td>{{employee.id}}</td>

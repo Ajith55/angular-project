@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AppService } from './app.service';
 import { SharedService } from './Employee/service/shared.service';
+import { ResponseModel } from './models/responseModel';
+import { EmployeeModel } from './models/employeeModel';
 
 @Component({
   selector: 'app-root',
@@ -20,8 +22,9 @@ export class AppComponent {
   { id: 55, name: "sam", email: "sam@gmail.com" },
   { id: 66, name: "dam", email: "dam@gmail.com" }]
 
-  myStudentResponse : any; //of type any
+  myStudentResponse1 : any; //of type any
   employeeResults : any;
+  myStudentResponse : Array<EmployeeModel>;
 
   
 
@@ -42,10 +45,10 @@ export class AppComponent {
 
   afterChange(){
     this.studentService.getAllStudents().subscribe((response)=>{
-      console.log(response);
+      // console.log(response);
       // console.log(response.status);
       // console.log(response.data);
-            this.myStudentResponse = response;
+            this.myStudentResponse = response.data;
     }, (err) =>{
       console.log(err);
     });
