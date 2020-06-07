@@ -7,6 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmployeeFormResultsComponent } from './Employee/employee-form-results/employee-form-results.component';
 import { EmployeeFormComponent } from './Employee/employee-form-results/employee-form/employee-form.component';
 import { EmployeeResultsComponent } from './Employee/employee-form-results/employee-results/employee-results.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { ParentComponent } from './parent/parent.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +20,17 @@ import { EmployeeResultsComponent } from './Employee/employee-form-results/emplo
     StudentComponent,
     EmployeeFormResultsComponent,
     EmployeeFormComponent,
-    EmployeeResultsComponent
+    EmployeeResultsComponent,
+    ParentComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
