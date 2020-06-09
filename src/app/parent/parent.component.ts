@@ -7,6 +7,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class ParentComponent implements OnInit, OnDestroy {
 
+  parentName : string = 'Ajith';
+
   constructor() {
     console.log("parent const executed");
    }

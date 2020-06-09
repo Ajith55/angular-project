@@ -16,13 +16,17 @@ export class HeaderComponent implements OnInit {
   }
 
   navigateToParent(){
-      this.router.navigate(['/parent'])
+      this.router.navigate(['/parent']);
 
   }
 
   navigateToStudent(){
-    this.router.navigate(['/student'])
+    this.router.navigate(['/student']);
 
+  }
+
+  navigateToStaff(){
+    this.router.navigate(['/staff']);
   }
 
 }
