@@ -7,9 +7,11 @@ import { AppService } from '../app.service';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  id : string;
+  id : string = null;
   name : string;
   employee : any;
+
+  open : boolean = true;
   // studentIdandName: any;
 
   constructor(private appService : AppService) { }
@@ -29,7 +31,13 @@ export class FooterComponent implements OnInit {
 
   getStudentDetails(){
     // this.appService.getStudentData(this.id, this.name)
-
+    debugger;
+      console.log(this.id);
+      if(this.id !=null && this.id != ''){
+            console.log('if');
+      }else{
+        console.log('else');
+      }
   }
 
 }
