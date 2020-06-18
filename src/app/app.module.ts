@@ -13,7 +13,9 @@ import { ParentComponent } from './parent/parent.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsComponent } from './forms/forms.component';
+import { FormsPracticeComponent } from './forms-practice/forms-practice.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +27,17 @@ import { FormsModule } from '@angular/forms';
     ParentComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    FormsComponent,
+    FormsPracticeComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

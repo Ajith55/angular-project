@@ -1,0 +1,89 @@
+<div>
+    <form [formGroup]="studentForm">
+        <label for="firstName">First name</label><br>
+        <input 
+            type="text" 
+            id="firstName" 
+            name="firstName"
+            formControlName = "firstName"
+            > <br>
+            
+            <div *ngIf="!studentForm.controls['firstName'].valid && 
+                        studentForm.controls['firstName'].errors.required && formSubmitStatus">
+                            <p>This is a required field.</p>
+            </div>
+            <div *ngIf="!studentForm.controls['firstName'].valid && 
+                        studentForm.controls['firstName'].errors.minlength && formSubmitStatus">
+                            <p>First name should be atleatst 3 characters.</p>
+            </div>
+            <div *ngIf="!studentForm.controls['firstName'].valid && 
+                        studentForm.controls['firstName'].errors.maxlength && formSubmitStatus">
+                            <p>First name should not be more than 10 characters.</p>
+            </div>
+
+
+        <label for="lastName">Last name:</label><br>
+        <input 
+            type="text" 
+            id="lastName" 
+            name="lastName"
+            formControlName = "lastName"
+            > <br>
+            <div *ngIf="!studentForm.controls['lastName'].valid && 
+                        studentForm.controls['lastName'].errors.required && formSubmitStatus">
+                            <p>This is a required field.</p>
+            </div>
+
+        <label for="age">Age:</label><br>
+            <input 
+                type="number" 
+                id="age" 
+                name="age"
+                formControlName = "age"
+                ><br>
+        <label for="email">Email:</label><br>
+                <input 
+                    type="text" 
+                    id="email" 
+                    name="email"
+                    formControlName = "email"
+                    ><br><br>
+
+        <button type="submit" (click)="submitStudent()">Submit</button>
+
+      </form> 
+</div>
+
+<button type="submit" (click)="updateEmployee()">Get Emp Info</button>
+
+<div>
+    <form [formGroup]="employeeForm">
+        <label for="employeeName">Employee name</label><br>
+        <input 
+            type="text" 
+            id="employeeName" 
+            name="employeeName"
+            formControlName = "employeeName"
+            > <br>
+
+
+        <label for="employeeId">Employee Id:</label><br>
+        <input 
+            type="number" 
+            id="employeeId" 
+            name="employeeId"
+            formControlName = "employeeId"
+            > <br>
+
+        <label for="employeePhNo">Ph No:</label><br>
+            <input 
+                type="text" 
+                id="employeePhNo" 
+                name="employeePhNo"
+                formControlName = "employeePhNo"
+                ><br><br>
+
+        <button type="submit" (click)="submitEmployee()">Update</button>
+
+      </form> 
+</div>

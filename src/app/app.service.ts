@@ -12,4 +12,10 @@ export class AppService {
   getAllStudents(){
    return this.http.get('http://dummy.restapiexample.com/api/v1/employees');
   }
+
+  updateEmployee(){
+    let employee = {employeeName : 'Ajith', employeeId : 10, employeePhNo : '9010736143' }
+    return employee;
+  }
+
 }

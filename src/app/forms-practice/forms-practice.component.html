@@ -1,0 +1,32 @@
+<div>
+    <form [formGroup]="studentForm"> 
+        <label for="firstName">First name:</label><br>
+
+        <input 
+                type="text" 
+                id="firstName" 
+                name="firstName"
+                formControlName = "firstName"
+        ><br>
+
+        <label for="lastName">Last name:</label><br>
+
+        <input 
+                type="text" 
+                id="lastName"
+                name="lastName"
+                formControlName = "lastName"
+        ><br>
+
+        <label for="age">Age:</label><br>
+
+        <input 
+                type="number" 
+                id="age"
+                name="age"
+                formControlName = "Age"
+        ><br><br>
+
+        <input type="submit" (click)="submitStudent()">
+      </form> 
+</div>

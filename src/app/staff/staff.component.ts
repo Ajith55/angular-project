@@ -14,9 +14,14 @@ export class StaffComponent implements OnInit {
   staffId : number = 22;
   staffResponse : Array<StaffModel> = [];
 
-  constructor(private router : Router, private staffServiceService : StaffServiceService) { }
+  constructor(private router : Router, private staffServiceService : StaffServiceService) { 
+    this.add(1,2);
+  }
 
   ngOnInit(): void {
+  }
+  add(a: number, b:number) {
+    console.log(a+b);
   }
 
   navigateToTeaching(){
@@ -47,6 +52,11 @@ export class StaffComponent implements OnInit {
     }
    });
 
+  }
+
+  rowClick(emp: StaffModel){
+    console.log('row click works');
+    console.log(emp);
   }
 
 }
