@@ -1,0 +1,20 @@
+<p>form-results works!</p>
+
+
+<table>
+    <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>phone No</th>
+    <th>Address</th>
+</tr>
+<tr *ngFor="let form of studentList">
+    <td>{{form.id}}</td>
+    <td>{{form.name}}</td>
+    <td>{{form.email}}</td>
+    <td>{{form.phNo}}</td>
+    <td>{{form.address}}</td>
+    
+</tr>
+</table>

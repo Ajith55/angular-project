@@ -16,6 +16,9 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormsComponent } from './forms/forms.component';
 import { FormsPracticeComponent } from './forms-practice/forms-practice.component';
+import { FormComponent } from './form/form.component';
+import { FormResultsComponent } from './form-results/form-results.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { FormsPracticeComponent } from './forms-practice/forms-practice.componen
     FooterComponent,
     HomeComponent,
     FormsComponent,
-    FormsPracticeComponent
+    FormsPracticeComponent,
+    FormComponent,
+    FormResultsComponent,
+  
   ],
   imports: [
     BrowserModule,

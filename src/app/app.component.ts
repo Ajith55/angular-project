@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppService } from './app.service';
 import { SharedService } from './Employee/service/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -22,12 +23,13 @@ export class AppComponent {
 
   myStudentResponse : any; //of type any
   employeeResults : any;
+  userName : string = 'Ajith';
 
   
 
   showName : boolean = false;
 
-  constructor(private studentService : AppService, private sharedService : SharedService){               //dependency injection
+  constructor(private studentService : AppService, private sharedService : SharedService, private route: Router){               //dependency injection
     // console.log('constructor executed');                                                       //will get access from AppService and SharedService
     // this.someArray[3];
     
@@ -75,7 +77,13 @@ export class AppComponent {
     
     
   }
+
+  staffRoute() {
+    this.route.navigate(['/staff']);
+  }
   
+
+
   
 
 }

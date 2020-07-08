@@ -1,0 +1,26 @@
+<button id="staffDetails" name="staffDetails" (click)="onStaffDetails()">Staff Details</button>
+
+
+
+
+<div class="container" *ngIf="staffResponse.length">
+    <table class="table" >
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>salary</th>
+        <th>Age</th>
+        <th>photo</th>
+        <th>Age Status</th>
+      </tr>
+      <tr *ngFor="let employee of staffResponse" (click)="rowClick(employee)">
+        <td>{{employee.id}}</td>
+        <td>{{employee.employee_name}}</td>
+        <td>{{employee.employee_salary}}</td>
+      
+        <td>{{employee.employee_age}}</td>
+        <td>{{employee.profile_image}}</td>
+        <td>{{employee.ageStatus}}</td>
+      </tr>
+    </table>
+</div>
