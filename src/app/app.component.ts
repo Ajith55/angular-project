@@ -27,6 +27,7 @@ export class AppComponent {
 
   constructor(private studentService : AppService){               //dependency injection
     console.log('constructor executed');
+    console.log(this.myStudentResponse);
     // this.someArray[3];
     
   }
